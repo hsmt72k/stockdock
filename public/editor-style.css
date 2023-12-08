@@ -1,0 +1,19 @@
+/*
+*@blocknote\core\dist
+*/
+._blockContent_nstdf_22._isEmpty_nstdf_297._hasAnchor_nstdf_310 ._inlineContent_nstdf_297:before {
+    content: "テキストを入力するか、コマンドは「/」を入力" !important;
+}
+
+._blockContent_nstdf_22[data-content-type=heading]._isEmpty_nstdf_297 ._inlineContent_nstdf_297:before {
+    content: "見出し" !important;
+}
+
+._blockContent_nstdf_22[data-content-type=bulletListItem]._isEmpty_nstdf_297 ._inlineContent_nstdf_297:before,
+._blockContent_nstdf_22[data-content-type=numberedListItem]._isEmpty_nstdf_297 ._inlineContent_nstdf_297:before {
+    content: "リスト" !important;
+}
+
+._isEmpty_nstdf_297 ._blockContent_nstdf_22[data-content-type=captionedImage] ._inlineContent_nstdf_297:before {
+    content: "Caption" !important;
+}

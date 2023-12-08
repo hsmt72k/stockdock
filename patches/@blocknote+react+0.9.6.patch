@@ -1,0 +1,211 @@
+diff --git a/node_modules/@blocknote/react/dist/blocknote-react.js b/node_modules/@blocknote/react/dist/blocknote-react.js
+index 04390be..ec7e1f1 100644
+--- a/node_modules/@blocknote/react/dist/blocknote-react.js
++++ b/node_modules/@blocknote/react/dist/blocknote-react.js
+@@ -1304,40 +1304,40 @@ function G(e) {
+ }
+ const nn = [
+   {
+-    name: "Paragraph",
++    name: "テキスト",
+     type: "paragraph",
+     icon: ie,
+     isSelected: (e) => e.type === "paragraph"
+   },
+   {
+-    name: "Heading 1",
++    name: "見出し 1",
+     type: "heading",
+     props: { level: 1 },
+     icon: kt,
+     isSelected: (e) => e.type === "heading" && "level" in e.props && e.props.level === 1
+   },
+   {
+-    name: "Heading 2",
++    name: "見出し 2",
+     type: "heading",
+     props: { level: 2 },
+     icon: yt,
+     isSelected: (e) => e.type === "heading" && "level" in e.props && e.props.level === 2
+   },
+   {
+-    name: "Heading 3",
++    name: "見出し 3",
+     type: "heading",
+     props: { level: 3 },
+     icon: pt,
+     isSelected: (e) => e.type === "heading" && "level" in e.props && e.props.level === 3
+   },
+   {
+-    name: "Bullet List",
++    name: "箇条書きリスト",
+     type: "bulletListItem",
+     icon: Tt,
+     isSelected: (e) => e.type === "bulletListItem"
+   },
+   {
+-    name: "Numbered List",
++    name: "番号付きリスト",
+     type: "numberedListItem",
+     icon: jt,
+     isSelected: (e) => e.type === "numberedListItem"
+@@ -1849,8 +1849,8 @@ const cn = {
+       children: /* @__PURE__ */ r.jsxs(Q, { value: n, onTabChange: o, children: [
+         i && /* @__PURE__ */ r.jsx(Cr, { visible: i }),
+         /* @__PURE__ */ r.jsxs(Q.List, { children: [
+-          e.editor.uploadFile !== void 0 && /* @__PURE__ */ r.jsx(Q.Tab, { value: "upload", "data-test": "upload-tab", children: "Upload" }),
+-          /* @__PURE__ */ r.jsx(Q.Tab, { value: "embed", "data-test": "embed-tab", children: "Embed" })
++          e.editor.uploadFile !== void 0 && /* @__PURE__ */ r.jsx(Q.Tab, { value: "upload", "data-test": "upload-tab", children: "アップロード" }),
++          /* @__PURE__ */ r.jsx(Q.Tab, { value: "embed", "data-test": "embed-tab", children: "リンクを埋め込む" })
+         ] }),
+         e.editor.uploadFile !== void 0 && /* @__PURE__ */ r.jsx(Q.Panel, { value: "upload", children: /* @__PURE__ */ r.jsxs(
+           "div",
+@@ -1865,7 +1865,7 @@ const cn = {
+               /* @__PURE__ */ r.jsx(
+                 vt,
+                 {
+-                  placeholder: "Upload Image",
++                  placeholder: "ファイルをアップロード",
+                   size: "xs",
+                   value: null,
+                   onChange: g,
+@@ -1891,7 +1891,7 @@ const cn = {
+                 ht,
+                 {
+                   size: "xs",
+-                  placeholder: "Enter URL",
++                  placeholder: "画像のリンクを貼り付ける",
+                   value: a,
+                   onChange: h,
+                   onKeyDown: p,
+@@ -1905,7 +1905,7 @@ const cn = {
+                   onClick: S,
+                   size: "xs",
+                   "data-test": "embed-input-button",
+-                  children: "Embed Image"
++                  children: "画像を埋め込む"
+                 }
+               )
+             ]
+@@ -2679,46 +2679,46 @@ function eo(e) {
+   return /* @__PURE__ */ r.jsx(Tr, { theme: s, children: /* @__PURE__ */ r.jsx(Vn, { ...o }) });
+ }
+ const Un = {
+-  Heading: {
+-    group: "Headings",
++  "見出し": {
++    group: "見出しブロック",
+     icon: /* @__PURE__ */ r.jsx(kt, { size: 18 }),
+-    hint: "Used for a top-level heading",
++    hint: "大きいフォントの見出し",
+     shortcut: A("Mod-Alt-1")
+   },
+-  "Heading 2": {
+-    group: "Headings",
++  "見出し 2": {
++    group: "見出しブロック",
+     icon: /* @__PURE__ */ r.jsx(yt, { size: 18 }),
+-    hint: "Used for key sections",
++    hint: "中くらいのフォントの見出し",
+     shortcut: A("Mod-Alt-2")
+   },
+-  "Heading 3": {
+-    group: "Headings",
++  "見出し 3": {
++    group: "見出しブロック",
+     icon: /* @__PURE__ */ r.jsx(pt, { size: 18 }),
+-    hint: "Used for subsections and group headings",
++    hint: "小さめのフォントの見出し",
+     shortcut: A("Mod-Alt-3")
+   },
+-  "Numbered List": {
+-    group: "Basic blocks",
++  "番号付きリスト": {
++    group: "基本ブロック",
+     icon: /* @__PURE__ */ r.jsx(jt, { size: 18 }),
+-    hint: "Used to display a numbered list",
++    hint: "番号付きリストを作成",
+     shortcut: A("Mod-Alt-7")
+   },
+-  "Bullet List": {
+-    group: "Basic blocks",
++  "箇条書きリスト": {
++    group: "基本ブロック",
+     icon: /* @__PURE__ */ r.jsx(Tt, { size: 18 }),
+-    hint: "Used to display an unordered list",
++    hint: "箇条書きリストを作成",
+     shortcut: A("Mod-Alt-9")
+   },
+-  Paragraph: {
+-    group: "Basic blocks",
++  "テキスト": {
++    group: "基本ブロック",
+     icon: /* @__PURE__ */ r.jsx(ie, { size: 18 }),
+-    hint: "Used for the body of your document",
++    hint: "ノーマルなテキスト",
+     shortcut: A("Mod-Alt-0")
+   },
+-  Image: {
+-    group: "Media",
++  "画像": {
++    group: "画像ブロック",
+     icon: /* @__PURE__ */ r.jsx(qr, {}),
+-    hint: "Insert an image"
++    hint: "画像を挿入する"
+   }
+ };
+ function Nn(e = ut) {
+diff --git a/node_modules/@blocknote/react/src/FormattingToolbar/components/DefaultDropdowns/BlockTypeDropdown.tsx b/node_modules/@blocknote/react/src/FormattingToolbar/components/DefaultDropdowns/BlockTypeDropdown.tsx
+index 3486836..98e0f04 100644
+--- a/node_modules/@blocknote/react/src/FormattingToolbar/components/DefaultDropdowns/BlockTypeDropdown.tsx
++++ b/node_modules/@blocknote/react/src/FormattingToolbar/components/DefaultDropdowns/BlockTypeDropdown.tsx
+@@ -30,13 +30,13 @@ export type BlockTypeDropdownItem = {
+ 
+ export const defaultBlockTypeDropdownItems: BlockTypeDropdownItem[] = [
+   {
+-    name: "Paragraph",
++    name: "テキスト",
+     type: "paragraph",
+     icon: RiText,
+     isSelected: (block) => block.type === "paragraph",
+   },
+   {
+-    name: "Heading 1",
++    name: "見出し 1",
+     type: "heading",
+     props: { level: 1 },
+     icon: RiH1,
+@@ -46,7 +46,7 @@ export const defaultBlockTypeDropdownItems: BlockTypeDropdownItem[] = [
+       block.props.level === 1,
+   },
+   {
+-    name: "Heading 2",
++    name: "見出し 2",
+     type: "heading",
+     props: { level: 2 },
+     icon: RiH2,
+@@ -56,7 +56,7 @@ export const defaultBlockTypeDropdownItems: BlockTypeDropdownItem[] = [
+       block.props.level === 2,
+   },
+   {
+-    name: "Heading 3",
++    name: "見出し 3",
+     type: "heading",
+     props: { level: 3 },
+     icon: RiH3,
+@@ -66,13 +66,13 @@ export const defaultBlockTypeDropdownItems: BlockTypeDropdownItem[] = [
+       block.props.level === 3,
+   },
+   {
+-    name: "Bullet List",
++    name: "箇条書きリスト",
+     type: "bulletListItem",
+     icon: RiListUnordered,
+     isSelected: (block) => block.type === "bulletListItem",
+   },
+   {
+-    name: "Numbered List",
++    name: "番号付きリスト",
+     type: "numberedListItem",
+     icon: RiListOrdered,
+     isSelected: (block) => block.type === "numberedListItem",

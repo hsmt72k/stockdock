@@ -1,0 +1,93 @@
+diff --git a/node_modules/@blocknote/core/dist/blocknote.js b/node_modules/@blocknote/core/dist/blocknote.js
+index c134a75..49c0081 100644
+--- a/node_modules/@blocknote/core/dist/blocknote.js
++++ b/node_modules/@blocknote/core/dist/blocknote.js
+@@ -2319,7 +2319,7 @@ const No = {
+   const r = document.createElement("div");
+   r.className = k.addImageButtonIcon;
+   const i = document.createElement("p");
+-  i.className = k.addImageButtonText, i.innerText = "Add Image";
++  i.className = k.addImageButtonText, i.innerText = "画像を追加";
+   const s = document.createElement("div");
+   s.className = k.imageAndCaptionWrapper, s.style.display = n.props.url !== "" ? "" : "none";
+   const l = document.createElement("div");
+@@ -3011,46 +3011,46 @@ const Yo = (n = qt) => {
+   var e, o, r;
+   const t = [];
+   return "heading" in n && "level" in n.heading.propSchema && ((e = n.heading.propSchema.level.values) != null && e.includes(1) && t.push({
+-    name: "Heading",
++    name: "見出し",
+     aliases: ["h", "heading1", "h1"],
+     execute: (i) => N(i, {
+       type: "heading",
+       props: { level: 1 }
+     })
+   }), (o = n.heading.propSchema.level.values) != null && o.includes(2) && t.push({
+-    name: "Heading 2",
++    name: "見出し 2",
+     aliases: ["h2", "heading2", "subheading"],
+     execute: (i) => N(i, {
+       type: "heading",
+       props: { level: 2 }
+     })
+   }), (r = n.heading.propSchema.level.values) != null && r.includes(3) && t.push({
+-    name: "Heading 3",
++    name: "見出し 3",
+     aliases: ["h3", "heading3", "subheading"],
+     execute: (i) => N(i, {
+       type: "heading",
+       props: { level: 3 }
+     })
+   })), "bulletListItem" in n && t.push({
+-    name: "Bullet List",
++    name: "箇条書きリスト",
+     aliases: ["ul", "list", "bulletlist", "bullet list"],
+     execute: (i) => N(i, {
+       type: "bulletListItem"
+     })
+   }), "numberedListItem" in n && t.push({
+-    name: "Numbered List",
++    name: "番号付きリスト",
+     aliases: ["li", "list", "numberedlist", "numbered list"],
+     execute: (i) => N(i, {
+       type: "numberedListItem"
+     })
+   }), "paragraph" in n && t.push({
+-    name: "Paragraph",
++    name: "テキスト",
+     aliases: ["p"],
+     execute: (i) => N(i, {
+       type: "paragraph"
+     })
+   }), "image" in n && t.push({
+-    name: "Image",
++    name: "画像",
+     aliases: [
+       "image",
+       "imageUpload",
+diff --git a/node_modules/@blocknote/core/src/extensions/Blocks/nodes/Block.module.css b/node_modules/@blocknote/core/src/extensions/Blocks/nodes/Block.module.css
+index f8626d0..234d072 100644
+--- a/node_modules/@blocknote/core/src/extensions/Blocks/nodes/Block.module.css
++++ b/node_modules/@blocknote/core/src/extensions/Blocks/nodes/Block.module.css
+@@ -308,7 +308,7 @@ NESTED BLOCKS
+ /* TODO: would be nicer if defined from code */
+ 
+ .blockContent.isEmpty.hasAnchor .inlineContent:before {
+-  content: "Enter text or type '/' for commands";
++  content: "テキストを入力するか、コマンドは「/」を入力";
+ }
+ 
+ .blockContent.isFilter.hasAnchor .inlineContent:before {
+diff --git a/node_modules/@blocknote/core/src/extensions/Blocks/nodes/BlockContent/ImageBlockContent/ImageBlockContent.ts b/node_modules/@blocknote/core/src/extensions/Blocks/nodes/BlockContent/ImageBlockContent/ImageBlockContent.ts
+index 95b5fd3..b4f5bb8 100644
+--- a/node_modules/@blocknote/core/src/extensions/Blocks/nodes/BlockContent/ImageBlockContent/ImageBlockContent.ts
++++ b/node_modules/@blocknote/core/src/extensions/Blocks/nodes/BlockContent/ImageBlockContent/ImageBlockContent.ts
+@@ -70,7 +70,7 @@ const renderImage = (
+   // Text for the add image button.
+   const addImageButtonText = document.createElement("p");
+   addImageButtonText.className = styles.addImageButtonText;
+-  addImageButtonText.innerText = "Add Image";
++  addImageButtonText.innerText = "画像を追加";
+ 
+   // Wrapper element for the image, resize handles and caption.
+   const imageAndCaptionWrapper = document.createElement("div");
